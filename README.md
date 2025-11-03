@@ -1,86 +1,114 @@
-📋 Project Overview
+# 🧠 Customer Support Data Analysis Project
+### Data-driven insights for improving customer satisfaction and service efficiency
 
-This project analyzes customer support ticket data to uncover key factors affecting customer satisfaction (CSAT) and operational performance.
+---
 
-The goal is to demonstrate how data can be used for decision-making, process improvement, and strategic recommendations — reflecting real-world business analysis tasks.
+## 📋 Project Overview
+This project analyzes **customer support ticket data** to uncover key factors affecting **customer satisfaction (CSAT)** and **operational performance**.
 
-🎯 Objectives
+The goal is to demonstrate how data can be used for **decision-making**, **process improvement**, and **strategic recommendations** — reflecting real-world business analytics tasks.
 
-Identify patterns and relationships between service metrics (e.g., resolution time, SLA compliance) and customer satisfaction.
+---
 
-Evaluate how issue type, communication channel, and agent performance influence CSAT.
+## 🎯 Objectives
+- Identify relationships between operational metrics (response time, SLA compliance) and customer satisfaction.
+- Evaluate how **issue type**, **communication channel**, and **agent performance** influence CSAT.
+- Provide actionable, data-driven recommendations to improve service quality.
 
-Provide actionable, data-driven recommendations to improve the overall support experience.
+---
 
-🧰 Tools & Technologies
+## 🧰 Tools & Technologies
+- **Python** 🐍  
+  `pandas`, `numpy`, `matplotlib`, `seaborn`, `scipy`, `sklearn`
+- **Excel** for validation and exploratory review
+- **Jupyter Notebook** for documentation and EDA
+- **GitHub** for version control and presentation
 
-Python 🐍
+---
 
-pandas, numpy → data cleaning & manipulation
+## 📊 Dataset
+The dataset includes anonymized customer support tickets:
 
-matplotlib, seaborn → visualization
+| Feature | Description |
+|----------|-------------|
+| `ticket_id` | Unique ticket identifier |
+| `issue_type` | Type of issue (billing, technical, cancellation, etc.) |
+| `channel` | Communication channel (chat, email, phone) |
+| `response_time` | Time to first response (minutes) |
+| `resolution_time` | Time to resolve issue (minutes) |
+| `sla_breached` | SLA violation flag (0/1) |
+| `agent_id` | Support agent identifier |
+| `csat_score` | Customer satisfaction rating (1–5) |
 
-scipy.stats → statistical testing (Kruskal–Wallis, correlation)
+---
 
-sklearn → preprocessing, modeling
+## 🔍 Analytical Process
 
-Excel → exploratory data validation and pivot summaries
+### 1. Data Cleaning & Preprocessing
+- Handled missing values and outliers.
+- Normalized time metrics and standardized categorical data.
+- Checked distributions and skewness to choose proper statistical tests.
 
-Jupyter Notebook → analysis documentation and narrative
+### 2. Exploratory Data Analysis (EDA)
+- Univariate & bivariate visualizations.
+- Boxplots to compare CSAT across **issue types** and **channels**.
+- Heatmaps to identify correlations among variables.
 
-GitHub → version control and project presentation
+### 3. Statistical Analysis
+- **Correlation analysis (Pearson, Spearman, Kendall)** for numeric variables.
+- **Kruskal–Wallis H-test** for non-parametric group comparison.
+- **SLA compliance analysis** per agent and issue type.
 
-📊 Dataset
+### 4. Insights Extracted
+- **Insight 1️⃣:** Weak positive correlation between **resolution time** and **CSAT** (r ≈ 0.13).  
+- **Insight 2️⃣:** **Issue type** influences satisfaction — billing and cancellation issues show lower CSAT.  
+- **Insight 3️⃣:** **Communication channel** significantly affects CSAT (p ≈ 0.04); chat leads to higher satisfaction.  
+- **Insight 4️⃣:** **SLA breach rate** correlates negatively with CSAT; compliance drives satisfaction.  
 
-The dataset consists of anonymized customer support tickets including:
+### 5. Visualization & Storytelling
+- Clear, intuitive charts (boxplots, histograms, heatmaps).
+- Focused on translating data into actionable insights.
 
-Feature	Description
-ticket_id	Unique ticket identifier
-issue_type	Type of customer issue (billing, technical, cancellation, etc.)
-channel	Communication channel (chat, email, phone)
-response_time	Time to first response (minutes)
-resolution_time	Total time to resolve issue (minutes)
-sla_breached	Whether SLA was violated (0/1)
-agent_id	Identifier for support agent
-csat_score	Customer satisfaction rating (1–5)
-🔍 Analytical Process
+---
 
-Data Cleaning & Preprocessing
+## 📈 Key Findings
 
-Handled missing values and outliers.
+| Category | Finding | Impact |
+|-----------|----------|--------|
+| ⏱️ Resolution Time | Weak correlation (r = 0.138) | Time alone not decisive |
+| 💬 Issue Type | Billing & Cancellation lower CSAT | Requires process improvement |
+| 📞 Channel | Chat > Phone > Email (p = 0.0396) | Channel optimization |
+| ⚙️ SLA Compliance | Negative link with CSAT | Key operational KPI |
+| 👩‍💼 Agent Variation | High variance | Needs targeted training |
 
-Normalized time fields, standardized issue types, and encoded categorical variables.
+---
 
-Checked distribution and skewness to select appropriate statistical tests.
+## 💡 Recommendations
+1. Prioritize **SLA compliance** — monitor and reduce breaches.  
+2. Improve **financial and cancellation** workflows.  
+3. Promote **chat** as the default support channel.  
+4. Implement **targeted training** for underperforming agents.  
+5. Build **feedback loops** and track performance KPIs continuously.  
 
-Exploratory Data Analysis (EDA)
+---
 
-Univariate and bivariate visualizations.
+## 🧮 Statistical Summary
 
-Distribution plots for response/resolution times.
+| Test | Variable | Result | p-value | Interpretation |
+|------|-----------|---------|---------|----------------|
+| Pearson | CSAT vs Resolution Time | r = 0.138 | — | Weak positive |
+| Kruskal–Wallis | CSAT vs Issue Type | H = 7.703 | 0.103 | Not significant |
+| Kruskal–Wallis | CSAT vs Channel | H = 8.334 | 0.0396 | Significant difference |
 
-Boxplots to compare CSAT across issue types and channels.
+---
 
-Statistical Analysis
+## 🧠 Lessons & Skills Demonstrated
+- Application of **data analytics for business decision support**
+- Experience with **EDA, hypothesis testing, and correlation analysis**
+- Ability to connect **statistical evidence with business context**
+- **Data storytelling** through clear visuals and summaries
+- Communicating insights to both **technical and business stakeholders**
 
-Correlation analysis (Pearson, Spearman, Kendall) to understand linear and rank relationships between numeric variables.
+---
 
-Kruskal–Wallis H-test for non-parametric comparison across groups (issue type, channel).
-
-SLA compliance analysis per agent and per issue type.
-
-Insights Extraction
-
-Insight 1️⃣: Relationship between resolution time and CSAT is weakly positive (r ≈ 0.13), suggesting time alone doesn’t determine satisfaction.
-
-Insight 2️⃣: Issue type influences satisfaction — financial and cancellation issues yield lower CSAT, indicating process improvement opportunities.
-
-Insight 3️⃣: Communication channel significantly affects satisfaction (p ≈ 0.04); chat leads to higher CSAT, while email underperforms.
-
-Insight 4️⃣: SLA breach rate correlates negatively with satisfaction; ensuring SLA compliance is a key driver of customer happiness.
-
-Visualization & Storytelling
-
-Boxplots, heatmaps, and distribution charts to illustrate findings.
-
-Focus on interpretable visual storytelling — turning data into actionable business insights.
+## 📂 Repository Structure
